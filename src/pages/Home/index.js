@@ -1,24 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import { ScrollView, ActivityIndicator } from 'react-native';
-import Header from '../../components/Header';
 import { Feather } from '@expo/vector-icons';
-
-import {
-  Container,
-  SearchContainer,
-  Input,
-  SearchButton,
-  Title,
-  BannerButton,
-  Banner,
-  SliderMovie,
-} from './styles';
+import { useNavigation } from '@react-navigation/native';
+import React, { useEffect, useState } from 'react';
+import { ActivityIndicator, ScrollView } from 'react-native';
+import Header from '../../components/Header';
 import SliderItem from '../../components/SliderItem';
-
 import api, { key } from '../../services/api';
 import { getListMovies, randomBanner } from '../../utils/movie';
-
-import { useNavigation } from '@react-navigation/native';
+import {
+  Banner,
+  BannerButton,
+  Container,
+  Input,
+  SearchButton,
+  SearchContainer,
+  SliderMovie,
+  Title,
+} from './styles';
 
 function Home() {
   const [nowMovies, setNowMovies] = useState([]);
